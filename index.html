@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>AgriVerse Advisory Platform</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; margin:0; background: #f5fcf6; color:#223; }
+    nav { background: #25b05f; color:#fff; padding: 0.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between;}
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 0.1rem; /* reduced gap */
+    }
+    .navbar-logo {
+      height: 62px;   /* increased logo size */
+      width: auto;
+      margin-right: 0;
+    }
+    nav h1 { margin: 0; font-size: 2rem; font-weight: bold;}
+    nav ul { display: flex; list-style:none; gap: 1rem; margin:0; padding:0;}
+    nav li { margin:0; }
+    nav select, nav button { font-size:1rem; padding:0.2rem 0.5rem; border-radius:5px; border:none;}
+    nav select { margin-left:0.6rem; }
+
+    header {
+      background: linear-gradient(90deg,#25b05f 59%, #155f36 100%);
+      color: #fff;
+      padding:2rem 1.5rem 2rem 1.5rem;
+      text-align:center;
+    }
+    header h2 { font-size:2.2rem; margin: 0.5rem 0;}
+    header p { font-size:1.25rem;}
+    header button {
+      background: #fff; color: #25b05f; border:none;
+      font-size:1.1rem; padding:0.7rem 1.6rem; border-radius:8px;
+      margin-top:1rem; font-weight:600; transition:background 0.25s;
+      cursor:pointer;
+    }
+    header button:hover {background: #e0f4e2;}
+    .feature-cards {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+      gap:1.2rem; margin: 0 1rem;
+    }
+    .feature-cards>div {
+      background: #fff; border-radius:14px; box-shadow:0 1px 4px #0001;
+      padding:1.2rem; display: flex; flex-direction:column;align-items:center;
+      min-height:160px; transition: box-shadow 0.25s;
+    }
+    .feature-cards>div:hover { box-shadow: 0 3px 12px #25b05f33;}
+    .feature-cards h4 { margin:0.4rem 0; color:#25b05f; font-size:1.12rem;}
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+    section { margin:2rem 0;}
+    section h3 { color:#155f36; font-size:1.5rem; margin:0 0 0.7rem 1.2rem;}
+    form { 
+      background:#eaffef; border-radius:10px; 
+      max-width:440px;margin:auto;padding:1.5rem 1rem;margin-bottom:1rem; display: flex; flex-direction: column; gap:0.9rem;
+    }
+    form label { font-weight:600; }
+    form input, form button { font-size:1rem; padding:0.5rem; border:1px solid #25b05f60; border-radius: 4px;}
+    form button {background: #25b05f; color:#fff; cursor:pointer; border:none;}
+    form button:hover {background:#19844b;}
+    #voice-support { display:flex; align-items:center;gap:0.5rem; margin:1rem 0;}
+    #voice-in { border-radius:50%; background:#25b05f; color:#fff;font-size:1.5rem;padding:0.7rem 1rem; border:none;box-shadow:0 2px 6px #155f3622;}
+
+    .dashboard-cards {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+      gap:1rem;margin:0 1rem;
+    }
+    .dashboard-card {
+      background:#fff; border-radius:12px; padding:1rem 1.2rem; display:flex; align-items:center; gap:1rem;box-shadow:0 1px 6px #0002;
+      min-height:80px;
+    }
+    .dashboard-card .icon { font-size:2rem; color:#25b05f;}
+    .dashboard-card .content {flex:1;}
+    .dashboard-card .label {font-size:1rem;color:#155f36;font-weight:600;}
+    .dashboard-card .value {font-size:1.35rem;font-weight:700;color:#223;}
+    
+    #help-btn { 
+      position:fixed; bottom:22px; right:22px; 
+      background:#25b05f; color:#fff; border:none; border-radius:50%; 
+      width:58px;height:58px; box-shadow:0 3px 15px #25b05f66;
+      font-size:2rem; display:flex;align-items:center;justify-content:center;cursor:pointer; z-index:100;
+    }
+    footer {
+      background:#eaffef; color:#155f36; padding:1.1rem; text-align:center; font-size:1rem; margin-top:2rem;
+    }
+    @media (max-width:600px) {
+      nav ul {flex-wrap:wrap; gap:0.5rem;}
+      header h2 {font-size:1.4rem;}
+      .feature-cards, .dashboard-cards {grid-template-columns:1fr;}
+      form {padding:1rem 0.6rem;}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo-title">
+      <img src="https://yappy-fuchsia-tzbuhx0dam.edgeone.app/logo1-removebg-preview.png" alt="AgriVerse Logo" class="navbar-logo">
+      <h1>AgriVerse</h1>
+    </div>
+    <ul>
+      <li><a href="#features" style="color:#fff;">Features</a></li>
+      <li><a href="#demo" style="color:#fff;">Demo</a></li>
+      <li><a href="#dashboard" style="color:#fff;">Dashboard</a></li>
+      <li><a href="#stories" style="color:#fff;">Stories</a></li>
+      <li>
+        <select aria-label="Language">
+          <option>English</option>
+          <option>हिंदी</option>
+          <option>বাংলা</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+  <header>
+    <h2>AI-powered, Eco-friendly Crop & Market Advisor</h2>
+    <p>Real-time recommendations, weather insights, pest detection, and price tracking—in your language, online or offline.</p>
+    <button>Get Started</button>
+  </header>
+
+  <section id="features">
+    <h3>Platform Features</h3>
+    <div class="feature-cards">
+      <div>
+        <img class="feature-icon" src="https://generous-bronze-0hgzvdzqy6.edgeone.app/Img1.png" alt="Soil Crop & Fertilizer">
+        <h4>Soil Crop & Fertilizer</h4>
+        <p>Personalized advice using your Soil Health Card.</p>
+      </div>
+      <div>
+        <img class="feature-icon" src="https://temporary-aqua-l3oeglswvb.edgeone.app/Img2.png" alt="Weather Dashboard">
+        <h4>Weather Dashboard</h4>
+        <p>AI-powered forecasts & local alerts at a glance.</p>
+      </div>
+      <div>
+        <img class="feature-icon" src="https://native-bronze-bz6q1pjg7e.edgeone.app/Img3.png" alt="Pest Detector">
+        <h4>Pest Detector</h4>
+        <p>Snap or upload photos for instant eco-friendly action.</p>
+      </div>
+      <div>
+        <img class="feature-icon" src="https://quarrelsome-blush-lt0wyztwlr.edgeone.app/Img4.png" alt="Live Market">
+        <h4>Live Market</h4>
+        <p>Daily mandi prices & alerts to optimize sales.</p>
+      </div>
+      <div>
+        <img class="feature-icon" src="https://elderly-yellow-qhwtrzjqxi.edgeone.app/Img5.png" alt="Voice/Multi-lingual">
+        <h4>Voice/Multi-lingual</h4>
+        <p>Talk or tap—in 10+ Indian languages, and get replies in your mother tongue.</p>
+      </div>
+      <div>
+        <img class="feature-icon" src="https://just-teal-hnk677axgn.edgeone.app/Img6.png" alt="Works Offline/USSD">
+        <h4>Works Offline/USSD</h4>
+        <p>Continue in low/no data areas—SMS/USSD fallback always available.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="dashboard">
+    <h3>Live Dashboard</h3>
+    <div class="dashboard-cards">
+      <div class="dashboard-card">
+        <span class="icon">🌾</span>
+        <div class="content">
+          <div class="label">Best Crop</div>
+          <div class="value">Wheat</div>
+        </div>
+      </div>
+      <div class="dashboard-card">
+        <span class="icon">☀️</span>
+        <div class="content">
+          <div class="label">Weather</div>
+          <div class="value">29°C, Cloudy</div>
+        </div>
+      </div>
+      <div class="dashboard-card">
+        <span class="icon">🪲</span>
+        <div class="content">
+          <div class="label">Pest Threat</div>
+          <div class="value">Low</div>
+        </div>
+      </div>
+      <div class="dashboard-card">
+        <span class="icon">💹</span>
+        <div class="content">
+          <div class="label">Mandi Price</div>
+          <div class="value">₹1887/Qtl</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo">
+    <h3>Interactive Demo</h3>
+    <form>
+      <label>Upload Soil Health Card (Image or PDF):</label>
+      <input type="file" accept=".jpg,.png,.pdf">
+      <label>Or Enter Soil Data:</label>
+      <input placeholder="N (mg/kg)">
+      <input placeholder="P (mg/kg)">
+      <input placeholder="K (mg/kg)">
+      <input placeholder="pH">
+      <input placeholder="Moisture %">
+      <button type="button">Get Crop & Fertilizer Advice</button>
+    </form>
+    <form>
+      <label>Pest/Disease Detection:</label>
+      <input type="file" accept="image/*">
+      <button type="button">Analyze Image</button>
+    </form>
+    <div id="voice-support">
+      <button id="voice-in" title="Speak your command">🎤</button>
+      <span>Press & speak soil/crop/price queries…</span>
+    </div>
+  </section>
+
+  <section id="stories">
+    <h3>Farmer Success Stories</h3>
+    <div class="feature-cards" style="background:transparent;">
+      <div><h4>Santosh, Bihar</h4><p>27% higher wheat yield, advisory in Hindi on SMS & app.</p></div>
+      <div><h4>Meena, Karnataka</h4><p>Saved 40% pesticides with IPM, eco-advice via voice in Kannada.</p></div>
+    </div>
+  </section>
+
+  <button id="help-btn" title="Need help?">?</button>
+
+  <footer>
+    <p>Call/SMS: +91-XXXXXXXXXX | Email: [help@agriverse.in](mailto:help@agriverse.in) | Download: <a href="/app.apk">App</a></p>
+    <p>© 2025 AgriVerse Platform</p>
+  </footer>
+  <script>
+    document.getElementById('help-btn').onclick = function(){
+      alert('Contact support at +91-XXXXXXXXXX or email help@agriverse.in');
+    };
+    document.getElementById('voice-in').onclick = function(){
+      alert('Voice input will be activated (integration needed)');
+    };
+  </script>
+</body>
+</html>
